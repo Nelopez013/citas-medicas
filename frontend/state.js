@@ -1,5 +1,4 @@
-// Cambia esta URL por la de Render al desplegar (ej. https://citas-api.onrender.com/api)
-export const API_URL = "http://localhost:3000/api";
+export const API_URL = "https://citas-medicas-1-8j7z.onrender.com/api";
 export const EMAIL_RE = /^[a-z0-9._%+-]+@fomag\.co$/i;
 export const ROLE_LABEL = { PATIENT: "Paciente", DOCTOR: "Médico", ADMIN: "Administrador" };
 
