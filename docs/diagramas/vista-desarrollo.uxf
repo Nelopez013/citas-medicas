@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates><x>100</x><y>150</y><w>640</w><h>730</h></coordinates>
+    <panel_attributes>Backend (Node.js + Express)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>150</x><y>20</y><w>330</w><h>90</h></coordinates>
+    <panel_attributes>symbol=component
+Frontend
+--
+index.html
+style.css
+app.js
+bg=#dcfce7</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>150</x><y>190</y><w>330</w><h>70</h></coordinates>
+    <panel_attributes>symbol=component
+Routes
+--
+routes/index.js
+bg=#dbeafe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>150</x><y>310</y><w>330</w><h>90</h></coordinates>
+    <panel_attributes>symbol=component
+Middleware
+--
+auth.js (JWT + requireRole)
+errorHandler.js
+bg=#dbeafe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>150</x><y>450</y><w>330</w><h>100</h></coordinates>
+    <panel_attributes>symbol=component
+Controllers
+--
+Auth, Admin, Calendar
+Doctor, Appointment, User
+bg=#dbeafe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>150</x><y>600</y><w>330</w><h>110</h></coordinates>
+    <panel_attributes>symbol=component
+Services (lógica de negocio)
+--
+Auth, Admin, Calendar
+Doctor, Appointment, User
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>530</x><y>600</y><w>190</w><h>60</h></coordinates>
+    <panel_attributes>symbol=component
+utils/validators.js
+bg=#e5e7eb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>150</x><y>760</y><w>330</w><h>70</h></coordinates>
+    <panel_attributes>symbol=component
+Prisma Client
+--
+config/prisma.js
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>150</x><y>930</y><w>330</w><h>70</h></coordinates>
+    <panel_attributes>&lt;&lt;base de datos&gt;&gt;
+PostgreSQL (Supabase)
+bg=#e5e7eb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>310</x><y>110</y><w>10</w><h>80</h></coordinates>
+    <panel_attributes>lt=-&gt;
+HTTPS / REST + JWT</panel_attributes>
+    <additional_attributes>5;0;5;80</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>310</x><y>260</y><w>10</w><h>50</h></coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>5;0;5;50</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>310</x><y>400</y><w>10</w><h>50</h></coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>5;0;5;50</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>310</x><y>550</y><w>10</w><h>50</h></coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>5;0;5;50</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>310</x><y>710</y><w>10</w><h>50</h></coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>5;0;5;50</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>310</x><y>830</y><w>10</w><h>100</h></coordinates>
+    <panel_attributes>lt=-&gt;
+SQL (SSL)</panel_attributes>
+    <additional_attributes>5;0;5;100</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>480</x><y>625</y><w>50</w><h>10</h></coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>0;5;50;5</additional_attributes>
+  </element>
+</diagram>

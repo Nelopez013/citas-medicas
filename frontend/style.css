@@ -1,0 +1,86 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f1f5f9; color: #0f172a; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: #0369a1; color: #fff; }
+header h1 { font-size: 1.2rem; margin: 0; }
+#userBox { display: flex; gap: 10px; align-items: center; }
+main { max-width: 760px; margin: 20px auto; padding: 0 12px; }
+.card { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+input, select { width: 100%; padding: 10px; margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+button { background: #0369a1; color: #fff; border: 0; border-radius: 6px; padding: 10px 16px; cursor: pointer; font-size: .95rem; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+button.secondary { background: transparent; border: 1px solid #fff; }
+button.danger { background: #dc2626; }
+.tabs { display: flex; gap: 6px; margin-bottom: 10px; }
+.tab { background: #e2e8f0; color: #0f172a; flex: 1; }
+.tab.active { background: #0369a1; color: #fff; }
+.step { font-weight: 600; margin: 14px 0 4px; color: #0369a1; }
+.muted { color: #64748b; }
+.doctor { border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin: 8px 0; }
+.slots { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.slot { background: #e0f2fe; color: #075985; padding: 6px 10px; font-size: .85rem; }
+.slot.selected { background: #0369a1; color: #fff; }
+ul { list-style: none; padding: 0; margin: 0; }
+li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; }
+.msg { padding: 10px 14px; border-radius: 6px; background: #dcfce7; color: #166534; }
+.msg.error { background: #fee2e2; color: #991b1b; }
+.hidden { display: none !important; }
+@media (max-width: 480px) { li { flex-direction: column; align-items: flex-start; } }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.row label { flex: 1 1 120px; font-size: .85rem; color: #475569; }
+.daygroup { margin-top: 10px; }
+.daylabel { font-weight: 600; font-size: .85rem; color: #334155; text-transform: capitalize; }
+.badge { font-size: .75rem; padding: 2px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+.badge.busy { background: #fef3c7; color: #92400e; }
+/* Pega esto al final de tu style.css existente.
+   No redefine .card ni tus otros estilos: solo añade el layout de dos columnas. */
+
+.auth-view {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.auth-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Anula el margen/sombra de .card solo dentro del panel de auth */
+.auth-form.card {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2.5rem;
+}
+
+.auth-image {
+  position: relative;
+}
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* En pantallas pequeñas, se oculta la imagen y el formulario ocupa todo el ancho */
+@media (max-width: 960px) {
+  .auth-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .auth-image {
+    display: none;
+  }
+}

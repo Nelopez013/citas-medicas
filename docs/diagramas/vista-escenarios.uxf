@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates><x>340</x><y>20</y><w>300</w><h>800</h></coordinates>
+    <panel_attributes>Sistema de Citas Médicas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>70</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Registrarse (paciente)
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>140</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Iniciar sesión
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>210</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Consultar médicos y calendario
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>280</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Reservar cita
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>350</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Ver y cancelar mis citas
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>420</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Editar mi perfil
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>490</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Generar calendario de horarios
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>560</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Ver reservas y quitar horarios libres
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>630</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Crear médico
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates><x>360</x><y>700</y><w>260</w><h>50</h></coordinates>
+    <panel_attributes>Listar y eliminar médicos
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates><x>60</x><y>210</y><w>80</w><h>120</h></coordinates>
+    <panel_attributes>Paciente</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates><x>860</x><y>470</y><w>80</w><h>120</h></coordinates>
+    <panel_attributes>Médico</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates><x>860</x><y>640</y><w>80</w><h>120</h></coordinates>
+    <panel_attributes>Administrador</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>140</x><y>95</y><w>220</w><h>165</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>0;165;220;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>140</x><y>165</y><w>220</w><h>95</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>0;95;220;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>140</x><y>235</y><w>220</w><h>25</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>0;25;220;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>140</x><y>260</y><w>220</w><h>45</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>0;0;220;45</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>140</x><y>260</y><w>220</w><h>115</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>0;0;220;115</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>140</x><y>260</y><w>220</w><h>185</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>0;0;220;185</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>165</y><w>240</w><h>355</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;355;0;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>445</y><w>240</w><h>75</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;75;0;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>510</y><w>240</w><h>10</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;10;0;5</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>520</y><w>240</w><h>65</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;0;0;65</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>165</y><w>240</w><h>525</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;525;0;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>445</y><w>240</w><h>245</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;245;0;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>655</y><w>240</w><h>35</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;35;0;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>620</x><y>690</y><w>240</w><h>35</h></coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>240;0;0;35</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates><x>40</x><y>720</y><w>270</w><h>100</h></coordinates>
+    <panel_attributes>Salvo Registrarse e Iniciar sesión, toda acción requiere un JWT válido y el rol correspondiente (RF07).
+bg=#fde68a</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

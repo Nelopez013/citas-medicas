@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  PATIENT
+  DOCTOR
+  ADMIN
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  documento    String        @unique @db.VarChar(10)
+  name         String
+  email        String        @unique
+  passwordHash String
+  role         Role          @default(PATIENT)
+  createdAt    DateTime      @default(now())
+  doctor       Doctor?
+  appointments Appointment[]
+}
+
+model Doctor {
+  id        Int    @id @default(autoincrement())
+  userId    Int    @unique
+  specialty String
+  user      User   @relation(fields: [userId], references: [id])
+  slots     Slot[]
+}
+
+model Slot {
+  id           Int           @id @default(autoincrement())
+  doctorId     Int
+  startsAt     DateTime
+  isBooked     Boolean       @default(false)
+  doctor       Doctor        @relation(fields: [doctorId], references: [id])
+  appointments Appointment[]
+
+  @@unique([doctorId, startsAt])
+}
+
+model Appointment {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  slotId    Int
+  status    String   @default("ACTIVE") // ACTIVE | CANCELLED
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  slot      Slot     @relation(fields: [slotId], references: [id])
+}

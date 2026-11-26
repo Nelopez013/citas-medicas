@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citas Médicas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🩺 Citas Médicas</h1>
+    <div id="userBox" class="hidden">
+      <span id="userName"></span>
+      <button id="logoutBtn" class="secondary">Salir</button>
+    </div>
+  </header>
+
+  <main>
+    <p id="msg" class="msg hidden"></p>
+
+    <!-- Autenticación (RF01): panel izquierdo con el formulario, derecho con una imagen -->
+    <section id="authView" class="auth-view">
+      <div class="auth-split">
+        <div class="auth-form card">
+          <div class="tabs">
+            <button id="tabLogin" class="tab active">Iniciar sesión</button>
+            <button id="tabRegister" class="tab">Registrarse (paciente)</button>
+          </div>
+          <div id="regFields" class="hidden">
+            <input id="documento" placeholder="Documento (5 a 10 dígitos)" inputmode="numeric" maxlength="10" />
+            <input id="name" placeholder="Nombre completo" />
+          </div>
+          <input id="email" type="email" placeholder="correo@fomag.co" />
+          <input id="password" type="password" placeholder="Contraseña (mín. 6)" />
+          <button id="authBtn">Entrar</button>
+          <p class="muted">Los médicos son creados por el administrador.</p>
+        </div>
+        <div class="auth-image">
+          <img src="assets/auth-cover.jpg" alt="Equipo médico" />
+        </div>
+      </div>
+    </section>
+
+    <div id="appView" class="hidden">
+      <!-- Paciente -->
+      <div id="patientView" class="hidden">
+        <section class="card">
+          <h2>Reservar cita</h2>
+          <p class="step">Paso 1 · Especialidad</p>
+          <select id="specialty"></select>
+          <p class="step">Paso 2 · Médico y horario</p>
+          <div id="doctors"></div>
+          <p class="step">Paso 3 · Confirmar</p>
+          <p id="selection" class="muted">Aún no has elegido un horario.</p>
+          <button id="confirmBtn" disabled>Confirmar cita</button>
+        </section>
+        <section class="card">
+          <h2>Mis citas activas</h2>
+          <ul id="myAppointments"></ul>
+        </section>
+      </div>
+
+      <!-- Médico (RF06) -->
+      <div id="doctorView" class="hidden">
+        <section class="card">
+          <h2>Mi calendario</h2>
+          <p class="step">Definir disponibilidad</p>
+          <div class="row">
+            <label>Fecha<input id="slotDate" type="date" /></label>
+            <label>Desde<input id="slotFrom" type="time" value="08:00" /></label>
+            <label>Hasta<input id="slotTo" type="time" value="12:00" /></label>
+            <label>Cada
+              <select id="slotStep">
+                <option value="20">20 min</option>
+                <option value="30" selected>30 min</option>
+                <option value="60">60 min</option>
+              </select>
+            </label>
+          </div>
+          <button id="addSlotBtn">Generar horarios</button>
+          <p class="step">Mis horarios (lo que ven los pacientes)</p>
+          <div id="mySlots"></div>
+        </section>
+      </div>
+
+      <!-- Administrador (RF08) -->
+      <div id="adminView" class="hidden">
+        <section class="card">
+          <h2>Crear médico</h2>
+          <input id="dDocumento" placeholder="Documento (5 a 10 dígitos)" inputmode="numeric" maxlength="10" />
+          <input id="dName" placeholder="Nombre completo" />
+          <input id="dEmail" type="email" placeholder="correo@fomag.co" />
+          <input id="dSpecialty" placeholder="Especialidad" />
+          <input id="dPassword" type="password" placeholder="Contraseña inicial (mín. 6)" />
+          <button id="createDocBtn">Crear médico</button>
+        </section>
+        <section class="card">
+          <h2>Médicos registrados</h2>
+          <ul id="docList"></ul>
+        </section>
+      </div>
+
+      <!-- Perfil (RF05) -->
+      <section class="card">
+        <h2>Mi perfil</h2>
+        <p id="profInfo" class="muted"></p>
+        <input id="profName" placeholder="Nombre" />
+        <input id="curPass" type="password" placeholder="Contraseña actual (solo si la cambias)" />
+        <input id="newPass" type="password" placeholder="Nueva contraseña (opcional)" />
+        <button id="saveProfileBtn">Guardar cambios</button>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

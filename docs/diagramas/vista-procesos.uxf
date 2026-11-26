@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates><x>20</x><y>20</y><w>900</w><h>800</h></coordinates>
+    <panel_attributes>title=Vista de Procesos: autenticación y reserva de cita
+obj=Paciente~pac actor
+obj=Frontend~fe
+obj=API Express~api
+obj=PostgreSQL~db
+pac-&gt;fe : ingresa correo y contraseña
+fe-&gt;api : POST /api/auth/login
+api-&gt;db : busca usuario por correo
+db--&gt;api : usuario y hash
+api-&gt;api : bcrypt.compare y firma JWT
+api--&gt;fe : token JWT y rol
+pac-&gt;fe : elige especialidad
+fe-&gt;api : GET /api/doctors?specialty= (Bearer JWT)
+api-&gt;api : verifica JWT y rol PATIENT
+api-&gt;db : médicos con horarios libres
+db--&gt;api : médicos y horarios
+api--&gt;fe : 200 calendario del médico
+fe--&gt;pac : muestra horarios por día
+pac-&gt;fe : elige horario y confirma
+fe-&gt;api : POST /api/appointments {slotId}
+api-&gt;db : TX: UPDATE slot SET isBooked=true WHERE id AND isBooked=false
+db--&gt;api : filas afectadas
+api-&gt;db : INSERT appointment (solo si filas = 1)
+api--&gt;fe : 201 Cita creada / 409 Horario no disponible
+fe--&gt;pac : confirmación o aviso</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

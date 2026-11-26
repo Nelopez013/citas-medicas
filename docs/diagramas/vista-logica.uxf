@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>330</x><y>20</y><w>270</w><h>170</h></coordinates>
+    <panel_attributes>User
+--
+-id: Int
+-documento: String (único)
+-name: String
+-email: String (único)
+-passwordHash: String
+-role: Role
+-createdAt: DateTime
+bg=#dbeafe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>680</x><y>40</y><w>170</w><h>100</h></coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Role
+--
+PATIENT
+DOCTOR
+ADMIN
+bg=#e5e7eb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>330</x><y>260</y><w>270</w><h>100</h></coordinates>
+    <panel_attributes>Doctor
+--
+-id: Int
+-userId: Int (único)
+-specialty: String
+bg=#dbeafe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>330</x><y>440</y><w>270</w><h>100</h></coordinates>
+    <panel_attributes>Slot
+--
+-id: Int
+-doctorId: Int
+-startsAt: DateTime
+-isBooked: Boolean
+bg=#dbeafe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>680</x><y>380</y><w>240</w><h>130</h></coordinates>
+    <panel_attributes>Appointment
+--
+-id: Int
+-userId: Int
+-slotId: Int
+-status: ACTIVE | CANCELLED
+-createdAt: DateTime
+bg=#dbeafe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>20</x><y>20</y><w>210</w><h>80</h></coordinates>
+    <panel_attributes>AuthService
+--
++register(body)
++login(email, password)
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>20</x><y>130</y><w>210</w><h>80</h></coordinates>
+    <panel_attributes>UserService
+--
++getProfile(id)
++updateProfile(id, datos)
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>20</x><y>240</y><w>210</w><h>90</h></coordinates>
+    <panel_attributes>AdminService
+--
++listDoctors()
++createDoctor(body)
++deleteDoctor(id)
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>20</x><y>350</y><w>210</w><h>80</h></coordinates>
+    <panel_attributes>DoctorService
+--
++listSpecialties()
++listBySpecialty(esp)
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>20</x><y>460</y><w>210</w><h>90</h></coordinates>
+    <panel_attributes>CalendarService
+--
++listMine(userId)
++add(userId, horarios)
++remove(userId, slotId)
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>20</x><y>640</y><w>210</w><h>90</h></coordinates>
+    <panel_attributes>AppointmentService
+--
++book(userId, slotId)
++listMine(userId)
++cancel(userId, id)
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>600</x><y>75</y><w>80</w><h>10</h></coordinates>
+    <panel_attributes>lt=-&gt;
+m2=role</panel_attributes>
+    <additional_attributes>0;5;80;5</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>460</x><y>190</y><w>10</w><h>70</h></coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1</panel_attributes>
+    <additional_attributes>5;0;5;70</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>460</x><y>360</y><w>10</w><h>80</h></coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>5;0;5;80</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>600</x><y>485</y><w>80</w><h>10</h></coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>0;5;80;5</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>600</x><y>170</y><w>180</w><h>210</h></coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>0;0;180;210</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>230</x><y>55</y><w>100</w><h>10</h></coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>0;5;100;5</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>230</x><y>150</y><w>100</w><h>20</h></coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>0;20;100;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>230</x><y>280</y><w>100</w><h>10</h></coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>0;5;100;5</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>230</x><y>350</y><w>100</w><h>40</h></coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>0;40;100;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>230</x><y>490</y><w>100</w><h>15</h></coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>0;15;100;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>230</x><y>510</y><w>510</w><h>175</h></coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>0;175;510;0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>40</x><y>200</y><w>240</w><h>140</h></coordinates>
+    <panel_attributes>symbol=node
+&lt;&lt;dispositivo&gt;&gt;
+Navegador web
+--
+PC o móvil del usuario
+bg=#e5e7eb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>400</x><y>40</y><w>260</w><h>140</h></coordinates>
+    <panel_attributes>symbol=node
+&lt;&lt;CDN&gt;&gt;
+Vercel
+--
+Artefacto: frontend estático
+(index.html, style.css, app.js)
+bg=#dcfce7</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>400</x><y>360</y><w>260</w><h>170</h></coordinates>
+    <panel_attributes>symbol=node
+&lt;&lt;servicio web&gt;&gt;
+Render (Node.js)
+--
+Artefacto: API Express + Prisma
+Variables: DATABASE_URL,
+JWT_SECRET, FRONTEND_URL
+bg=#fef9c3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates><x>780</x><y>360</y><w>240</w><h>140</h></coordinates>
+    <panel_attributes>symbol=node
+&lt;&lt;base de datos&gt;&gt;
+Supabase
+--
+PostgreSQL (Session pooler)
+bg=#e5e7eb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>280</x><y>110</y><w>120</w><h>130</h></coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+HTTPS</panel_attributes>
+    <additional_attributes>0;130;120;0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>280</x><y>300</y><w>120</w><h>140</h></coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+HTTPS REST + JWT</panel_attributes>
+    <additional_attributes>0;0;120;140</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>660</x><y>435</y><w>120</w><h>10</h></coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+SSL / Prisma</panel_attributes>
+    <additional_attributes>0;5;120;5</additional_attributes>
+  </element>
+</diagram>
